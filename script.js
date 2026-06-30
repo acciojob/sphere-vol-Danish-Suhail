@@ -3,14 +3,14 @@ function volume_sphere(event) {
 	event.preventDefault();
 	let radius = document.getElementById('radius');
 	let r = parseFloat(radius.value);
-
+	let vol = document.getElementById('volume');
 	if(isNaN(r) || r < 0){
-		alert(NaN);
+		vol.value = 'NaN';
 		return;
 	}
 
 	let V = (4/3) * Math.PI * Math.pow(r,3);
-	let vol = document.getElementById('volume');
+	
 	vol.value = V.toFixed(4);
 }
 
